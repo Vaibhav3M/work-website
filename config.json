@@ -1,0 +1,188 @@
+{
+  "site": {
+    "title": "AI Model Forge - Custom AI Training & Development",
+    "description": "Expert AI model training and development services. We help businesses build custom AI solutions tailored to their needs.",
+    "keywords": "AI training, machine learning, AI development, custom AI models, AI consulting"
+  },
+  "theme": {
+    "primaryColor": "#6366f1",
+    "secondaryColor": "#8b5cf6",
+    "accentColor": "#ec4899",
+    "textColor": "#1f2937",
+    "textLight": "#6b7280",
+    "bgColor": "#ffffff",
+    "bgLight": "#f9fafb",
+    "borderColor": "#e5e7eb"
+  },
+  "hero": {
+    "headline": "Transform Your Business with Custom AI Models",
+    "subheadline": "Expert training and development services for cutting-edge AI solutions tailored to your unique needs.",
+    "ctaPrimary": "Start Your AI Journey",
+    "ctaSecondary": "Learn More",
+    "backgroundImage": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1920&auto=format&fit=crop"
+  },
+  "about": {
+    "title": "About AI Model Forge",
+    "description": "We specialize in training and developing state-of-the-art AI models that solve real-world business challenges. Our team of experts combines deep technical knowledge with industry insights to deliver custom AI solutions that drive measurable results.",
+    "highlight": "Trusted by leading companies to build production-ready AI systems"
+  },
+  "features": [
+    {
+      "icon": "⚡",
+      "title": "Lightning Fast Training",
+      "description": "Optimized infrastructure ensures your models train efficiently, reducing time-to-production."
+    },
+    {
+      "icon": "🎯",
+      "title": "Custom Solutions",
+      "description": "Every model is tailored to your specific use case, data, and business requirements."
+    },
+    {
+      "icon": "🛡️",
+      "title": "Enterprise Security",
+      "description": "Bank-level security protocols protect your data and intellectual property throughout the process."
+    },
+    {
+      "icon": "📊",
+      "title": "Performance Analytics",
+      "description": "Comprehensive monitoring and analytics to track model performance in real-time."
+    },
+    {
+      "icon": "🔄",
+      "title": "Continuous Optimization",
+      "description": "Ongoing model refinement and updates to maintain peak performance as data evolves."
+    },
+    {
+      "icon": "👥",
+      "title": "Expert Support",
+      "description": "Dedicated AI specialists provide guidance from concept to deployment and beyond."
+    }
+  ],
+  "services": [
+    {
+      "title": "Model Training",
+      "description": "End-to-end training services for machine learning and deep learning models using your data.",
+      "icon": "🤖"
+    },
+    {
+      "title": "Fine-Tuning",
+      "description": "Optimize existing models for your specific domain and use cases with advanced fine-tuning techniques.",
+      "icon": "🔧"
+    },
+    {
+      "title": "Custom Development",
+      "description": "Build AI systems from scratch, designed specifically for your business processes and workflows.",
+      "icon": "💻"
+    },
+    {
+      "title": "Consulting",
+      "description": "Strategic AI consulting to identify opportunities and create actionable roadmaps for AI adoption.",
+      "icon": "📈"
+    },
+    {
+      "title": "Deployment",
+      "description": "Seamless deployment services to get your models into production with scalable infrastructure.",
+      "icon": "🚀"
+    },
+    {
+      "title": "Maintenance",
+      "description": "Ongoing support and maintenance to ensure your AI systems continue performing optimally.",
+      "icon": "🔧"
+    }
+  ],
+  "pricing": {
+    "title": "Flexible Pricing Plans",
+    "subtitle": "Choose the plan that fits your AI development needs",
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "5,000",
+        "period": "project",
+        "description": "Perfect for small-scale AI initiatives",
+        "features": [
+          "Single model training",
+          "Basic fine-tuning",
+          "Email support",
+          "30-day deployment support",
+          "Performance report"
+        ],
+        "cta": "Get Started"
+      },
+      {
+        "name": "Professional",
+        "price": "15,000",
+        "period": "project",
+        "description": "Ideal for growing businesses",
+        "features": [
+          "Multiple model training",
+          "Advanced fine-tuning",
+          "Priority support",
+          "90-day deployment support",
+          "Custom analytics dashboard",
+          "Monthly optimization reviews"
+        ],
+        "cta": "Get Started",
+        "popular": true
+      },
+      {
+        "name": "Enterprise",
+        "price": "Custom",
+        "period": "",
+        "description": "For large-scale AI transformations",
+        "features": [
+          "Unlimited model training",
+          "Dedicated AI team",
+          "24/7 support",
+          "Ongoing deployment support",
+          "Custom infrastructure setup",
+          "Quarterly strategy sessions",
+          "SLA guarantees"
+        ],
+        "cta": "Contact Sales"
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "name": "Sarah Chen",
+      "role": "CTO, TechForward Inc.",
+      "content": "AI Model Forge transformed our customer service operations with a custom NLP model. The results exceeded our expectations, and the team's expertise was invaluable.",
+      "avatar": "https://i.pravatar.cc/150?img=47"
+    },
+    {
+      "name": "Michael Rodriguez",
+      "role": "VP of AI, DataFlow Systems",
+      "content": "Their model training services are top-notch. We've deployed multiple models that are performing exceptionally well in production. Highly recommended!",
+      "avatar": "https://i.pravatar.cc/150?img=33"
+    },
+    {
+      "name": "Emily Johnson",
+      "role": "Director of Innovation, GlobalRetail",
+      "content": "The custom recommendation engine they built increased our conversion rates by 35%. Their team understood our business needs from day one.",
+      "avatar": "https://i.pravatar.cc/150?img=45"
+    }
+  ],
+  "cta": {
+    "title": "Ready to Build Your AI Solution?",
+    "description": "Get in touch with our team to discuss how we can help transform your business with custom AI models.",
+    "buttonText": "Schedule a Consultation",
+    "buttonLink": "#contact"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "description": "Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+    "email": "contact@aimodelforge.com",
+    "phone": "+1 (555) 123-4567",
+    "address": "123 Innovation Drive, San Francisco, CA 94105"
+  },
+  "social": {
+    "twitter": "https://twitter.com/aimodelforge",
+    "linkedin": "https://linkedin.com/company/aimodelforge",
+    "github": "https://github.com/aimodelforge"
+  },
+  "footer": {
+    "copyright": "© 2024 AI Model Forge. All rights reserved.",
+    "tagline": "Building the Future of AI, One Model at a Time"
+  }
+}
+

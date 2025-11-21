@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Model Forge - Custom AI Training & Development</title>
+    <meta name="description" content="Expert AI model training and development services. We help businesses build custom AI solutions tailored to their needs.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --accent: #ec4899;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #ffffff;
+            --bg-light: #f9fafb;
+            --border: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--bg-light);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .about-highlight {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-top: 2rem;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            background: white;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+        }
+
+        /* Pricing */
+        .pricing {
+            background: var(--bg-light);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .pricing-card.popular {
+            border: 2px solid var(--primary);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.popular::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .pricing-period {
+            color: var(--text-light);
+        }
+
+        .pricing-description {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .pricing-features li:before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .pricing-cta {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .testimonial-info h4 {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .testimonial-info p {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--bg-light);
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            margin: 1rem 0;
+            font-size: 1.125rem;
+        }
+
+        .contact-item a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-copyright {
+            opacity: 0.8;
+            font-size: 0.875rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .pricing-card.popular {
+                transform: scale(1);
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+        }
+
+        /* Loading State */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo" id="logo">AI Model Forge</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" id="mobileToggle">☰</button>
+        </div>
+    </nav>
+
+    <div id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="container">
+                <div class="hero-content" id="heroContent">
+                    <h1 id="heroTitle">Loading...</h1>
+                    <p id="heroSubtitle">Loading...</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary" id="heroCtaPrimary">Get Started</a>
+                        <a href="#about" class="btn btn-secondary" id="heroCtaSecondary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="about-content" id="aboutContent">
+                    <h2 class="section-title" id="aboutTitle">About Us</h2>
+                    <p id="aboutDescription">Loading...</p>
+                    <p class="about-highlight" id="aboutHighlight">Loading...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services">
+            <div class="container">
+                <h2 class="section-title" id="servicesTitle">Our Services</h2>
+                <div class="services-grid" id="servicesGrid">
+                    <!-- Services will be injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features">
+            <div class="container">
+                <h2 class="section-title" id="featuresTitle">Why Choose Us</h2>
+                <div class="features-grid" id="featuresGrid">
+                    <!-- Features will be injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing" id="pricing">
+            <div class="container">
+                <h2 class="section-title" id="pricingTitle">Pricing Plans</h2>
+                <p class="section-subtitle" id="pricingSubtitle">Choose the plan that fits your needs</p>
+                <div class="pricing-grid" id="pricingGrid">
+                    <!-- Pricing cards will be injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials">
+            <div class="container">
+                <h2 class="section-title" id="testimonialsTitle">What Our Clients Say</h2>
+                <div class="testimonials-grid" id="testimonialsGrid">
+                    <!-- Testimonials will be injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section" id="cta">
+            <div class="container">
+                <div class="cta-content" id="ctaContent">
+                    <h2 id="ctaTitle">Ready to Get Started?</h2>
+                    <p id="ctaDescription">Contact us today to discuss your project.</p>
+                    <a href="#contact" class="btn btn-primary" id="ctaButton">Schedule Consultation</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <h2 class="section-title" id="contactTitle">Get in Touch</h2>
+                    <p id="contactDescription">Have questions? We'd love to hear from you.</p>
+                    <div class="contact-info" id="contactInfo">
+                        <!-- Contact info will be injected here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="social-links" id="socialLinks">
+                        <!-- Social links will be injected here -->
+                    </div>
+                    <p class="footer-copyright" id="footerCopyright">© 2024 AI Model Forge. All rights reserved.</p>
+                    <p class="footer-tagline" id="footerTagline" style="opacity: 0.8; margin-top: 0.5rem;">Building the Future of AI</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Global config storage
+        let siteConfig = {};
+
+        // Load configuration from JSON
+        async function loadConfig() {
+            try {
+                const response = await fetch('config.json');
+                if (!response.ok) throw new Error('Failed to load config.json');
+                siteConfig = await response.json();
+                applyConfig();
+            } catch (error) {
+                console.error('Error loading config:', error);
+                useFallbackConfig();
+            }
+        }
+
+        // Fallback configuration if JSON fails to load
+        function useFallbackConfig() {
+            siteConfig = {
+                site: { title: 'AI Model Forge', description: 'AI Training Services' },
+                theme: {
+                    primaryColor: '#6366f1',
+                    secondaryColor: '#8b5cf6',
+                    accentColor: '#ec4899',
+                    textColor: '#1f2937',
+                    textLight: '#6b7280',
+                    bgColor: '#ffffff',
+                    bgLight: '#f9fafb',
+                    borderColor: '#e5e7eb'
+                },
+                hero: {
+                    headline: 'Transform Your Business with Custom AI Models',
+                    subheadline: 'Expert training and development services.',
+                    ctaPrimary: 'Get Started',
+                    ctaSecondary: 'Learn More'
+                },
+                about: {
+                    title: 'About Us',
+                    description: 'We specialize in AI model training and development.',
+                    highlight: 'Trusted by leading companies'
+                }
+            };
+            applyConfig();
+        }
+
+        // Apply theme colors
+        function applyTheme() {
+            const theme = siteConfig.theme || {};
+            if (theme.primaryColor) {
+                document.documentElement.style.setProperty('--primary', theme.primaryColor);
+            }
+            if (theme.secondaryColor) {
+                document.documentElement.style.setProperty('--secondary', theme.secondaryColor);
+            }
+            if (theme.accentColor) {
+                document.documentElement.style.setProperty('--accent', theme.accentColor);
+            }
+            if (theme.textColor) {
+                document.documentElement.style.setProperty('--text', theme.textColor);
+            }
+            if (theme.textLight) {
+                document.documentElement.style.setProperty('--text-light', theme.textLight);
+            }
+            if (theme.bgColor) {
+                document.documentElement.style.setProperty('--bg', theme.bgColor);
+            }
+            if (theme.bgLight) {
+                document.documentElement.style.setProperty('--bg-light', theme.bgLight);
+            }
+            if (theme.borderColor) {
+                document.documentElement.style.setProperty('--border', theme.borderColor);
+            }
+        }
+
+        // Apply hero background image
+        function applyHeroBackground() {
+            const hero = document.getElementById('hero');
+            const bgImage = siteConfig.hero?.backgroundImage;
+            if (bgImage && hero) {
+                hero.style.backgroundImage = `linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%), url('${bgImage}')`;
+                hero.style.backgroundBlendMode = 'overlay';
+            }
+        }
+
+        // Apply all configuration
+        function applyConfig() {
+            applyTheme();
+
+            // Site metadata
+            if (siteConfig.site?.title) {
+                document.title = siteConfig.site.title;
+            }
+            if (siteConfig.site?.description) {
+                const metaDesc = document.querySelector('meta[name="description"]');
+                if (metaDesc) metaDesc.content = siteConfig.site.description;
+            }
+
+            // Logo
+            const logo = document.getElementById('logo');
+            if (logo && siteConfig.site?.title) {
+                logo.textContent = siteConfig.site.title.split(' - ')[0] || siteConfig.site.title;
+            }
+
+            // Hero section
+            const heroTitle = document.getElementById('heroTitle');
+            const heroSubtitle = document.getElementById('heroSubtitle');
+            const heroCtaPrimary = document.getElementById('heroCtaPrimary');
+            const heroCtaSecondary = document.getElementById('heroCtaSecondary');
+
+            if (heroTitle && siteConfig.hero?.headline) {
+                heroTitle.textContent = siteConfig.hero.headline;
+            }
+            if (heroSubtitle && siteConfig.hero?.subheadline) {
+                heroSubtitle.textContent = siteConfig.hero.subheadline;
+            }
+            if (heroCtaPrimary && siteConfig.hero?.ctaPrimary) {
+                heroCtaPrimary.textContent = siteConfig.hero.ctaPrimary;
+            }
+            if (heroCtaSecondary && siteConfig.hero?.ctaSecondary) {
+                heroCtaSecondary.textContent = siteConfig.hero.ctaSecondary;
+            }
+
+            applyHeroBackground();
+
+            // About section
+            const aboutTitle = document.getElementById('aboutTitle');
+            const aboutDescription = document.getElementById('aboutDescription');
+            const aboutHighlight = document.getElementById('aboutHighlight');
+
+            if (aboutTitle && siteConfig.about?.title) {
+                aboutTitle.textContent = siteConfig.about.title;
+            }
+            if (aboutDescription && siteConfig.about?.description) {
+                aboutDescription.textContent = siteConfig.about.description;
+            }
+            if (aboutHighlight && siteConfig.about?.highlight) {
+                aboutHighlight.textContent = siteConfig.about.highlight;
+            }
+
+            // Services section
+            renderServices();
+
+            // Features section
+            renderFeatures();
+
+            // Pricing section
+            renderPricing();
+
+            // Testimonials section
+            renderTestimonials();
+
+            // CTA section
+            const ctaTitle = document.getElementById('ctaTitle');
+            const ctaDescription = document.getElementById('ctaDescription');
+            const ctaButton = document.getElementById('ctaButton');
+
+            if (ctaTitle && siteConfig.cta?.title) {
+                ctaTitle.textContent = siteConfig.cta.title;
+            }
+            if (ctaDescription && siteConfig.cta?.description) {
+                ctaDescription.textContent = siteConfig.cta.description;
+            }
+            if (ctaButton && siteConfig.cta?.buttonText) {
+                ctaButton.textContent = siteConfig.cta.buttonText;
+            }
+            if (ctaButton && siteConfig.cta?.buttonLink) {
+                ctaButton.href = siteConfig.cta.buttonLink;
+            }
+
+            // Contact section
+            renderContact();
+
+            // Footer
+            const footerCopyright = document.getElementById('footerCopyright');
+            const footerTagline = document.getElementById('footerTagline');
+
+            if (footerCopyright && siteConfig.footer?.copyright) {
+                footerCopyright.textContent = siteConfig.footer.copyright;
+            }
+            if (footerTagline && siteConfig.footer?.tagline) {
+                footerTagline.textContent = siteConfig.footer.tagline;
+            }
+
+            renderSocialLinks();
+        }
+
+        // Render services
+        function renderServices() {
+            const grid = document.getElementById('servicesGrid');
+            const services = siteConfig.services || [];
+
+            if (!grid || services.length === 0) return;
+
+            grid.innerHTML = services.map(service => `
+                <div class="service-card">
+                    <div class="service-icon">${service.icon || '🔧'}</div>
+                    <h3>${service.title || 'Service'}</h3>
+                    <p>${service.description || ''}</p>
+                </div>
+            `).join('');
+        }
+
+        // Render features
+        function renderFeatures() {
+            const grid = document.getElementById('featuresGrid');
+            const features = siteConfig.features || [];
+
+            if (!grid || features.length === 0) return;
+
+            grid.innerHTML = features.map(feature => `
+                <div class="feature-card">
+                    <div class="feature-icon">${feature.icon || '✨'}</div>
+                    <h3>${feature.title || 'Feature'}</h3>
+                    <p>${feature.description || ''}</p>
+                </div>
+            `).join('');
+        }
+
+        // Render pricing
+        function renderPricing() {
+            const grid = document.getElementById('pricingGrid');
+            const pricingTitle = document.getElementById('pricingTitle');
+            const pricingSubtitle = document.getElementById('pricingSubtitle');
+            const pricing = siteConfig.pricing || {};
+
+            if (pricingTitle && pricing.title) {
+                pricingTitle.textContent = pricing.title;
+            }
+            if (pricingSubtitle && pricing.subtitle) {
+                pricingSubtitle.textContent = pricing.subtitle;
+            }
+
+            const plans = pricing.plans || [];
+            if (!grid || plans.length === 0) return;
+
+            grid.innerHTML = plans.map(plan => `
+                <div class="pricing-card ${plan.popular ? 'popular' : ''}">
+                    <div class="pricing-header">
+                        <div class="pricing-name">${plan.name || 'Plan'}</div>
+                        <div class="pricing-price">${plan.price || '$0'}</div>
+                        ${plan.period ? `<div class="pricing-period">${plan.period}</div>` : ''}
+                    </div>
+                    <p class="pricing-description">${plan.description || ''}</p>
+                    <ul class="pricing-features">
+                        ${(plan.features || []).map(feature => `<li>${feature}</li>`).join('')}
+                    </ul>
+                    <a href="#contact" class="btn btn-primary pricing-cta">${plan.cta || 'Get Started'}</a>
+                </div>
+            `).join('');
+        }
+
+        // Render testimonials
+        function renderTestimonials() {
+            const grid = document.getElementById('testimonialsGrid');
+            const testimonials = siteConfig.testimonials || [];
+
+            if (!grid || testimonials.length === 0) return;
+
+            grid.innerHTML = testimonials.map(testimonial => `
+                <div class="testimonial-card">
+                    <p class="testimonial-content">"${testimonial.content || ''}"</p>
+                    <div class="testimonial-author">
+                        ${testimonial.avatar ? `<img src="${testimonial.avatar}" alt="${testimonial.name}" class="testimonial-avatar">` : ''}
+                        <div class="testimonial-info">
+                            <h4>${testimonial.name || 'Client'}</h4>
+                            <p>${testimonial.role || ''}</p>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Render contact
+        function renderContact() {
+            const contactTitle = document.getElementById('contactTitle');
+            const contactDescription = document.getElementById('contactDescription');
+            const contactInfo = document.getElementById('contactInfo');
+            const contact = siteConfig.contact || {};
+
+            if (contactTitle && contact.title) {
+                contactTitle.textContent = contact.title;
+            }
+            if (contactDescription && contact.description) {
+                contactDescription.textContent = contact.description;
+            }
+
+            if (!contactInfo) return;
+
+            let html = '';
+            if (contact.email) {
+                html += `<div class="contact-item"><strong>Email:</strong> <a href="mailto:${contact.email}">${contact.email}</a></div>`;
+            }
+            if (contact.phone) {
+                html += `<div class="contact-item"><strong>Phone:</strong> <a href="tel:${contact.phone}">${contact.phone}</a></div>`;
+            }
+            if (contact.address) {
+                html += `<div class="contact-item"><strong>Address:</strong> ${contact.address}</div>`;
+            }
+
+            contactInfo.innerHTML = html || '<p>Contact information coming soon.</p>';
+        }
+
+        // Render social links
+        function renderSocialLinks() {
+            const socialLinks = document.getElementById('socialLinks');
+            const social = siteConfig.social || {};
+
+            if (!socialLinks) return;
+
+            let html = '';
+            if (social.twitter) {
+                html += `<a href="${social.twitter}" target="_blank" rel="noopener">🐦</a>`;
+            }
+            if (social.linkedin) {
+                html += `<a href="${social.linkedin}" target="_blank" rel="noopener">💼</a>`;
+            }
+            if (social.github) {
+                html += `<a href="${social.github}" target="_blank" rel="noopener">💻</a>`;
+            }
+
+            socialLinks.innerHTML = html || '';
+        }
+
+        // Navbar scroll effect
+        function initNavbar() {
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        }
+
+        // Mobile menu toggle
+        function initMobileMenu() {
+            const toggle = document.getElementById('mobileToggle');
+            const navLinks = document.getElementById('navLinks');
+
+            if (toggle && navLinks) {
+                toggle.addEventListener('click', () => {
+                    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                });
+            }
+        }
+
+        // Smooth scroll for anchor links
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            loadConfig();
+            initNavbar();
+            initMobileMenu();
+            initSmoothScroll();
+        });
+    </script>
+</body>
+</html>
+
