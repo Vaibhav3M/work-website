@@ -1,110 +1,110 @@
 {
   "site": {
-    "title": "AI Model Forge - Custom AI Training & Development",
-    "description": "Expert AI model training and development services. We help businesses build custom AI solutions tailored to their needs.",
-    "keywords": "AI training, machine learning, AI development, custom AI models, AI consulting"
+    "title": "VMR Technologies - Technology Consulting & Solutions",
+    "description": "Expert technology consulting services. We help businesses transform their operations with innovative technology solutions tailored to their needs.",
+    "keywords": "technology consulting, IT consulting, software development, cloud solutions, digital transformation, technology services"
   },
   "theme": {
-    "primaryColor": "#6366f1",
-    "secondaryColor": "#8b5cf6",
-    "accentColor": "#ec4899",
-    "textColor": "#1f2937",
-    "textLight": "#6b7280",
+    "primaryColor": "#0066ff",
+    "secondaryColor": "#0052cc",
+    "accentColor": "#3399ff",
+    "textColor": "#000000",
+    "textLight": "#333333",
     "bgColor": "#ffffff",
-    "bgLight": "#f9fafb",
-    "borderColor": "#e5e7eb"
+    "bgLight": "#f8f9fa",
+    "borderColor": "#000000"
   },
   "hero": {
-    "headline": "Transform Your Business with Custom AI Models",
-    "subheadline": "Expert training and development services for cutting-edge AI solutions tailored to your unique needs.",
-    "ctaPrimary": "Start Your AI Journey",
+    "headline": "Transform Your Business with Technology Solutions",
+    "subheadline": "Expert consulting and development services for cutting-edge technology solutions tailored to your unique business needs.",
+    "ctaPrimary": "Start Your Transformation",
     "ctaSecondary": "Learn More",
-    "backgroundImage": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1920&auto=format&fit=crop"
+    "backgroundImage": ""
   },
   "about": {
-    "title": "About AI Model Forge",
-    "description": "We specialize in training and developing state-of-the-art AI models that solve real-world business challenges. Our team of experts combines deep technical knowledge with industry insights to deliver custom AI solutions that drive measurable results.",
-    "highlight": "Trusted by leading companies to build production-ready AI systems"
+    "title": "About VMR Technologies",
+    "description": "We specialize in delivering comprehensive technology solutions that solve real-world business challenges. Our team of experts combines deep technical knowledge with industry insights to deliver custom technology solutions that drive measurable results.",
+    "highlight": "Trusted by leading companies to build production-ready technology systems"
   },
   "features": [
     {
       "icon": "⚡",
-      "title": "Lightning Fast Training",
-      "description": "Optimized infrastructure ensures your models train efficiently, reducing time-to-production."
+      "title": "Rapid Implementation",
+      "description": "Optimized processes and infrastructure ensure your technology solutions are deployed efficiently, reducing time-to-market."
     },
     {
       "icon": "🎯",
       "title": "Custom Solutions",
-      "description": "Every model is tailored to your specific use case, data, and business requirements."
+      "description": "Every solution is tailored to your specific business requirements, industry, and operational needs."
     },
     {
       "icon": "🛡️",
       "title": "Enterprise Security",
-      "description": "Bank-level security protocols protect your data and intellectual property throughout the process."
+      "description": "Bank-level security protocols protect your data and intellectual property throughout the entire process."
     },
     {
       "icon": "📊",
       "title": "Performance Analytics",
-      "description": "Comprehensive monitoring and analytics to track model performance in real-time."
+      "description": "Comprehensive monitoring and analytics to track system performance and business metrics in real-time."
     },
     {
       "icon": "🔄",
       "title": "Continuous Optimization",
-      "description": "Ongoing model refinement and updates to maintain peak performance as data evolves."
+      "description": "Ongoing system refinement and updates to maintain peak performance as your business evolves."
     },
     {
       "icon": "👥",
       "title": "Expert Support",
-      "description": "Dedicated AI specialists provide guidance from concept to deployment and beyond."
+      "description": "Dedicated technology specialists provide guidance from concept to deployment and beyond."
     }
   ],
   "services": [
     {
-      "title": "Model Training",
-      "description": "End-to-end training services for machine learning and deep learning models using your data.",
-      "icon": "🤖"
-    },
-    {
-      "title": "Fine-Tuning",
-      "description": "Optimize existing models for your specific domain and use cases with advanced fine-tuning techniques.",
-      "icon": "🔧"
-    },
-    {
-      "title": "Custom Development",
-      "description": "Build AI systems from scratch, designed specifically for your business processes and workflows.",
+      "title": "Software Development",
+      "description": "End-to-end software development services for web, mobile, and enterprise applications using modern technologies.",
       "icon": "💻"
     },
     {
-      "title": "Consulting",
-      "description": "Strategic AI consulting to identify opportunities and create actionable roadmaps for AI adoption.",
+      "title": "Cloud Solutions",
+      "description": "Cloud migration, architecture design, and optimization services for AWS, Azure, and GCP platforms.",
+      "icon": "☁️"
+    },
+    {
+      "title": "Custom Development",
+      "description": "Build technology systems from scratch, designed specifically for your business processes and workflows.",
+      "icon": "🔧"
+    },
+    {
+      "title": "Technology Consulting",
+      "description": "Strategic technology consulting to identify opportunities and create actionable roadmaps for digital transformation.",
       "icon": "📈"
     },
     {
-      "title": "Deployment",
-      "description": "Seamless deployment services to get your models into production with scalable infrastructure.",
-      "icon": "🚀"
+      "title": "System Integration",
+      "description": "Seamless integration services to connect your existing systems with new technology solutions.",
+      "icon": "🔗"
     },
     {
-      "title": "Maintenance",
-      "description": "Ongoing support and maintenance to ensure your AI systems continue performing optimally.",
-      "icon": "🔧"
+      "title": "Support & Maintenance",
+      "description": "Ongoing support and maintenance to ensure your technology systems continue performing optimally.",
+      "icon": "🛠️"
     }
   ],
   "pricing": {
     "title": "Flexible Pricing Plans",
-    "subtitle": "Choose the plan that fits your AI development needs",
+    "subtitle": "Choose the plan that fits your technology consulting needs",
     "plans": [
       {
         "name": "Starter",
         "price": "5,000",
         "period": "project",
-        "description": "Perfect for small-scale AI initiatives",
+        "description": "Perfect for small-scale technology initiatives",
         "features": [
-          "Single model training",
-          "Basic fine-tuning",
+          "Single project consultation",
+          "Basic system development",
           "Email support",
           "30-day deployment support",
-          "Performance report"
+          "Project documentation"
         ],
         "cta": "Get Started"
       },
@@ -114,8 +114,8 @@
         "period": "project",
         "description": "Ideal for growing businesses",
         "features": [
-          "Multiple model training",
-          "Advanced fine-tuning",
+          "Multiple project consultation",
+          "Advanced system development",
           "Priority support",
           "90-day deployment support",
           "Custom analytics dashboard",
@@ -128,10 +128,10 @@
         "name": "Enterprise",
         "price": "Custom",
         "period": "",
-        "description": "For large-scale AI transformations",
+        "description": "For large-scale digital transformations",
         "features": [
-          "Unlimited model training",
-          "Dedicated AI team",
+          "Unlimited project consultation",
+          "Dedicated technology team",
           "24/7 support",
           "Ongoing deployment support",
           "Custom infrastructure setup",
@@ -146,43 +146,42 @@
     {
       "name": "Sarah Chen",
       "role": "CTO, TechForward Inc.",
-      "content": "AI Model Forge transformed our customer service operations with a custom NLP model. The results exceeded our expectations, and the team's expertise was invaluable.",
+      "content": "VMR Technologies transformed our operations with a custom technology solution. The results exceeded our expectations, and the team's expertise was invaluable.",
       "avatar": "https://i.pravatar.cc/150?img=47"
     },
     {
       "name": "Michael Rodriguez",
-      "role": "VP of AI, DataFlow Systems",
-      "content": "Their model training services are top-notch. We've deployed multiple models that are performing exceptionally well in production. Highly recommended!",
+      "role": "VP of Technology, DataFlow Systems",
+      "content": "Their technology consulting services are top-notch. We've implemented multiple solutions that are performing exceptionally well in production. Highly recommended!",
       "avatar": "https://i.pravatar.cc/150?img=33"
     },
     {
       "name": "Emily Johnson",
       "role": "Director of Innovation, GlobalRetail",
-      "content": "The custom recommendation engine they built increased our conversion rates by 35%. Their team understood our business needs from day one.",
+      "content": "The custom technology platform they built increased our operational efficiency by 35%. Their team understood our business needs from day one.",
       "avatar": "https://i.pravatar.cc/150?img=45"
     }
   ],
   "cta": {
-    "title": "Ready to Build Your AI Solution?",
-    "description": "Get in touch with our team to discuss how we can help transform your business with custom AI models.",
+    "title": "Ready to Transform Your Business?",
+    "description": "Get in touch with our team to discuss how we can help transform your business with innovative technology solutions.",
     "buttonText": "Schedule a Consultation",
     "buttonLink": "#contact"
   },
   "contact": {
     "title": "Get in Touch",
     "description": "Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
-    "email": "contact@aimodelforge.com",
+    "email": "contact@vmrtechnologies.com",
     "phone": "+1 (555) 123-4567",
     "address": "123 Innovation Drive, San Francisco, CA 94105"
   },
   "social": {
-    "twitter": "https://twitter.com/aimodelforge",
-    "linkedin": "https://linkedin.com/company/aimodelforge",
-    "github": "https://github.com/aimodelforge"
+    "twitter": "https://twitter.com/vmrtechnologies",
+    "linkedin": "https://linkedin.com/company/vmrtechnologies",
+    "github": "https://github.com/vmrtechnologies"
   },
   "footer": {
-    "copyright": "© 2024 AI Model Forge. All rights reserved.",
-    "tagline": "Building the Future of AI, One Model at a Time"
+    "copyright": "© 2024 VMR Technologies. All rights reserved.",
+    "tagline": "Building the Future of Technology, One Solution at a Time"
   }
 }
-

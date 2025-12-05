@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Model Forge - Custom AI Training & Development</title>
-    <meta name="description" content="Expert AI model training and development services. We help businesses build custom AI solutions tailored to their needs.">
+    <title>VMR Technologies - Technology Consulting & Solutions</title>
+    <meta name="description" content="Expert technology consulting services. We help businesses transform their operations with innovative technology solutions tailored to their needs.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #6366f1;
-            --secondary: #8b5cf6;
-            --accent: #ec4899;
-            --text: #1f2937;
-            --text-light: #6b7280;
+            --primary: #0066ff;
+            --primary-dark: #0052cc;
+            --primary-light: #3399ff;
+            --text: #000000;
+            --text-light: #333333;
             --bg: #ffffff;
-            --bg-light: #f9fafb;
-            --border: #e5e7eb;
+            --bg-light: #f8f9fa;
+            --border: #000000;
+            --border-light: #e0e0e0;
         }
 
         * {
@@ -36,12 +37,15 @@
             background: var(--bg);
             line-height: 1.6;
             overflow-x: hidden;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 3rem;
         }
 
         /* Navigation */
@@ -49,50 +53,108 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid var(--border-light);
             z-index: 1000;
             transition: all 0.3s ease;
         }
 
         nav.scrolled {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid var(--border-light);
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
-            max-width: 1200px;
+            padding: 1.25rem 3rem;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .nav-links {
+        .logo::before {
+            content: '✱';
+            font-size: 1.5rem;
+            color: var(--text);
+        }
+
+        .nav-center {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
+            align-items: center;
         }
 
-        .nav-links a {
+        .nav-center li {
+            position: relative;
+        }
+
+        .nav-center a {
             text-decoration: none;
             color: var(--text);
             font-weight: 500;
-            transition: color 0.3s ease;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
         }
 
-        .nav-links a:hover {
+        .nav-center a:hover {
             color: var(--primary);
+        }
+
+        .nav-dropdown {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .nav-dropdown::after {
+            content: '▼';
+            font-size: 0.65rem;
+            color: var(--text-light);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-icon {
+            font-size: 1.25rem;
+            color: var(--text);
+            cursor: pointer;
+            transition: color 0.2s ease;
+            text-decoration: none;
+        }
+
+        .nav-icon:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            padding: 0.6rem 1.5rem;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--text);
+            color: var(--bg);
         }
 
         .mobile-menu-toggle {
@@ -105,46 +167,49 @@
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
+            min-height: 90vh;
             display: flex;
             align-items: center;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding-top: 80px;
+            background: var(--bg);
+            color: var(--text);
+            padding-top: 100px;
+            padding-bottom: 5rem;
+            border-bottom: none !important;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('') center/cover;
-            opacity: 0.1;
-            z-index: 0;
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
         }
 
         .hero-content {
             position: relative;
             z-index: 1;
-            max-width: 800px;
             animation: fadeInUp 0.8s ease;
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
-            line-height: 1.2;
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 700;
+            line-height: 1.1;
             margin-bottom: 1.5rem;
+            color: var(--text);
+            letter-spacing: -0.02em;
         }
 
         .hero p {
-            font-size: clamp(1.1rem, 2vw, 1.25rem);
-            margin-bottom: 2rem;
-            opacity: 0.95;
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            margin-bottom: 2.5rem;
+            color: var(--text);
+            font-weight: 400;
+            line-height: 1.6;
         }
 
         .hero-buttons {
@@ -154,41 +219,165 @@
         }
 
         .btn {
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
+            padding: 1rem 2.5rem;
+            border-radius: 0;
+            font-weight: 500;
             text-decoration: none;
             display: inline-block;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             border: none;
             cursor: pointer;
             font-size: 1rem;
+            letter-spacing: 0.01em;
         }
 
         .btn-primary {
-            background: white;
-            color: var(--primary);
+            background: var(--primary);
+            color: white;
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            background: var(--primary-dark);
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 2px solid white;
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border);
         }
 
         .btn-secondary:hover {
-            background: white;
-            color: var(--primary);
+            background: var(--text);
+            color: var(--bg);
+        }
+
+        .hero-visual {
+            position: relative;
+            height: 100%;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .abstract-graphic {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .vertical-lines {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            gap: 0.4rem;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .vertical-line {
+            width: 1.5px;
+            height: 80%;
+            background: linear-gradient(to bottom, 
+                rgba(0, 102, 255, 0.15) 0%,
+                rgba(0, 102, 255, 0.35) 30%,
+                rgba(0, 102, 255, 0.5) 60%,
+                rgba(0, 51, 204, 0.6) 100%);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .blue-rectangles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .blue-rect {
+            position: absolute;
+            background: var(--primary);
+            opacity: 0.7;
+        }
+
+        .blue-rect-1 {
+            width: 120px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .blue-rect-2 {
+            width: 80px;
+            height: 120px;
+            top: 50%;
+            right: 20%;
+            animation: float 5s ease-in-out infinite 0.5s;
+        }
+
+        .blue-rect-3 {
+            width: 150px;
+            height: 60px;
+            bottom: 20%;
+            left: 30%;
+            animation: float 6s ease-in-out infinite 1s;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Statistics Section */
+        .stats-section {
+            background: var(--bg);
+            padding: 4rem 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 400;
         }
 
         /* Sections */
         section {
             padding: 5rem 0;
+            background: var(--bg);
+        }
+
+        section:not(:last-child) {
+            border-bottom: 1px solid var(--border-light);
         }
 
         .section-title {
@@ -197,6 +386,7 @@
             font-weight: 700;
             margin-bottom: 1rem;
             color: var(--text);
+            letter-spacing: -0.01em;
         }
 
         .section-subtitle {
@@ -207,11 +397,12 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            font-weight: 400;
         }
 
         /* About Section */
         .about {
-            background: var(--bg-light);
+            background: var(--bg);
         }
 
         .about-content {
@@ -222,14 +413,15 @@
 
         .about-content p {
             font-size: 1.125rem;
-            color: var(--text-light);
+            color: var(--text);
             margin-bottom: 1rem;
+            line-height: 1.7;
         }
 
         .about-highlight {
             font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--primary);
+            font-weight: 500;
+            color: var(--text);
             margin-top: 2rem;
         }
 
@@ -244,29 +436,34 @@
         .feature-card {
             background: white;
             padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border-radius: 0;
+            border: 1px solid var(--border-light);
             transition: all 0.3s ease;
         }
 
         .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-3px);
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(0, 102, 255, 0.1);
         }
 
         .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 1.25rem;
+            color: var(--primary);
+            opacity: 0.9;
         }
 
         .feature-card h3 {
             font-size: 1.25rem;
             margin-bottom: 0.75rem;
             color: var(--text);
+            font-weight: 600;
         }
 
         .feature-card p {
             color: var(--text-light);
+            line-height: 1.6;
         }
 
         /* Services Grid */
@@ -278,36 +475,43 @@
         }
 
         .service-card {
-            background: var(--bg-light);
+            background: var(--bg);
             padding: 2rem;
-            border-radius: 12px;
+            border-radius: 0;
+            border: 1px solid var(--border-light);
             text-align: center;
             transition: all 0.3s ease;
         }
 
         .service-card:hover {
-            background: white;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            transform: translateY(-5px);
+            background: var(--bg);
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(0, 102, 255, 0.1);
+            transform: translateY(-3px);
         }
 
         .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 1.25rem;
+            color: var(--primary);
+            opacity: 0.9;
         }
 
         .service-card h3 {
             font-size: 1.25rem;
             margin-bottom: 0.75rem;
+            color: var(--text);
+            font-weight: 600;
         }
 
         .service-card p {
             color: var(--text-light);
+            line-height: 1.6;
         }
 
         /* Pricing */
         .pricing {
-            background: var(--bg-light);
+            background: var(--bg);
         }
 
         .pricing-grid {
@@ -320,20 +524,20 @@
         .pricing-card {
             background: white;
             padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border-radius: 0;
+            border: 1px solid var(--border-light);
             position: relative;
             transition: all 0.3s ease;
         }
 
         .pricing-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-3px);
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(0, 102, 255, 0.1);
         }
 
         .pricing-card.popular {
             border: 2px solid var(--primary);
-            transform: scale(1.05);
         }
 
         .pricing-card.popular::before {
@@ -344,10 +548,11 @@
             transform: translateX(-50%);
             background: var(--primary);
             color: white;
-            padding: 0.25rem 1rem;
-            border-radius: 20px;
-            font-size: 0.875rem;
+            padding: 0.4rem 1.25rem;
+            border-radius: 0;
+            font-size: 0.75rem;
             font-weight: 600;
+            letter-spacing: 0.05em;
         }
 
         .pricing-header {
@@ -357,13 +562,14 @@
 
         .pricing-name {
             font-size: 1.5rem;
-            font-weight: 700;
+            font-weight: 600;
             margin-bottom: 0.5rem;
+            color: var(--text);
         }
 
         .pricing-price {
             font-size: 3rem;
-            font-weight: 800;
+            font-weight: 700;
             color: var(--primary);
             margin-bottom: 0.25rem;
         }
@@ -376,6 +582,7 @@
             text-align: center;
             color: var(--text-light);
             margin-bottom: 2rem;
+            font-size: 0.95rem;
         }
 
         .pricing-features {
@@ -385,20 +592,29 @@
 
         .pricing-features li {
             padding: 0.75rem 0;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--border-light);
             color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
         }
 
         .pricing-features li:before {
             content: '✓';
             color: var(--primary);
-            font-weight: bold;
-            margin-right: 0.5rem;
+            font-weight: 600;
+            margin-right: 0.75rem;
         }
 
         .pricing-cta {
             width: 100%;
             text-align: center;
+        }
+
+        .pricing-cta .btn {
+            width: 100%;
         }
 
         /* Testimonials */
@@ -412,15 +628,16 @@
         .testimonial-card {
             background: white;
             padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border-radius: 0;
+            border: 1px solid var(--border-light);
         }
 
         .testimonial-content {
-            font-style: italic;
-            color: var(--text-light);
+            font-style: normal;
+            color: var(--text);
             margin-bottom: 1.5rem;
-            font-size: 1.125rem;
+            font-size: 1rem;
+            line-height: 1.7;
         }
 
         .testimonial-author {
@@ -439,34 +656,41 @@
         .testimonial-info h4 {
             font-weight: 600;
             margin-bottom: 0.25rem;
+            color: var(--text);
         }
 
         .testimonial-info p {
             font-size: 0.875rem;
             color: var(--text-light);
+            font-weight: 400;
         }
 
         /* CTA Section */
         .cta-section {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
+            background: var(--bg);
+            color: var(--text);
             text-align: center;
         }
 
         .cta-section h2 {
-            color: white;
+            color: var(--text);
             margin-bottom: 1rem;
         }
 
         .cta-section p {
             font-size: 1.125rem;
             margin-bottom: 2rem;
-            opacity: 0.95;
+            color: var(--text-light);
+        }
+
+        .cta-section .btn-primary {
+            background: var(--primary);
+            color: white;
         }
 
         /* Contact Section */
         .contact {
-            background: var(--bg-light);
+            background: var(--bg);
         }
 
         .contact-content {
@@ -480,23 +704,31 @@
         }
 
         .contact-item {
-            margin: 1rem 0;
-            font-size: 1.125rem;
+            margin: 1.25rem 0;
+            font-size: 1rem;
+            color: var(--text);
+        }
+
+        .contact-item strong {
+            font-weight: 600;
+            color: var(--text);
         }
 
         .contact-item a {
-            color: var(--primary);
+            color: var(--text);
             text-decoration: none;
+            border-bottom: 1px solid var(--text);
         }
 
         .contact-item a:hover {
-            text-decoration: underline;
+            color: var(--primary);
+            border-bottom-color: var(--primary);
         }
 
         /* Footer */
         footer {
-            background: var(--text);
-            color: white;
+            background: var(--bg);
+            color: var(--text);
             padding: 3rem 0;
             text-align: center;
         }
@@ -513,7 +745,7 @@
         }
 
         .social-links a {
-            color: white;
+            color: var(--text);
             font-size: 1.5rem;
             text-decoration: none;
             transition: color 0.3s ease;
@@ -524,8 +756,15 @@
         }
 
         .footer-copyright {
-            opacity: 0.8;
+            color: var(--text-light);
             font-size: 0.875rem;
+            font-weight: 400;
+        }
+
+        .footer-tagline {
+            color: var(--text-light);
+            font-size: 0.875rem;
+            font-weight: 400;
         }
 
         /* Animations */
@@ -545,13 +784,41 @@
         }
 
         /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-visual {
+                min-height: 300px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
         @media (max-width: 768px) {
-            .nav-links {
+            .nav-center {
                 display: none;
+            }
+
+            .nav-right {
+                gap: 1rem;
+            }
+
+            .nav-container {
+                padding: 1rem 1.5rem;
             }
 
             .mobile-menu-toggle {
                 display: block;
+            }
+
+            .hero-container {
+                padding: 0 1.5rem;
             }
 
             .hero-buttons {
@@ -568,38 +835,43 @@
             }
 
             .container {
-                padding: 0 1rem;
+                padding: 0 1.5rem;
             }
 
             section {
                 padding: 3rem 0;
             }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 0 1.5rem;
+            }
+
+            .nav-cta {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
         }
 
-        /* Loading State */
-        .loading {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            font-size: 1.5rem;
-            color: var(--primary);
-        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <div class="logo" id="logo">AI Model Forge</div>
-            <ul class="nav-links" id="navLinks">
+            <div class="logo" id="logo">✱ / VMR Technologies</div>
+            <ul class="nav-center" id="navLinks">
+                <li><a href="#services" class="nav-dropdown">Products</a></li>
+                <li><a href="#features" class="nav-dropdown">Solutions</a></li>
+                <li><a href="#testimonials">Community</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="nav-right">
+                <a href="#" class="nav-icon" aria-label="Search">🔍</a>
+                <a href="#" class="nav-icon" aria-label="Language">🌐</a>
+                <a href="#contact" class="nav-cta">Get Started</a>
+            </div>
             <button class="mobile-menu-toggle" id="mobileToggle">☰</button>
         </div>
     </nav>
@@ -607,15 +879,43 @@
     <div id="main-content">
         <!-- Hero Section -->
         <section class="hero" id="hero">
-            <div class="container">
+            <div class="hero-container">
                 <div class="hero-content" id="heroContent">
-                    <h1 id="heroTitle">Loading...</h1>
-                    <p id="heroSubtitle">Loading...</p>
+                    <h1 id="heroTitle">Transform Your Business with Technology Solutions</h1>
+                    <p id="heroSubtitle">Expert consulting and development services for cutting-edge technology solutions tailored to your unique business needs.</p>
                     <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary" id="heroCtaPrimary">Get Started</a>
+                        <a href="#contact" class="btn btn-primary" id="heroCtaPrimary">Start Your Transformation</a>
                         <a href="#about" class="btn btn-secondary" id="heroCtaSecondary">Learn More</a>
                     </div>
                 </div>
+                <div class="hero-visual">
+                    <div class="abstract-graphic">
+                        <div class="vertical-lines">
+                            <div class="vertical-line" style="animation-delay: 0s;"></div>
+                            <div class="vertical-line" style="animation-delay: 0.1s;"></div>
+                            <div class="vertical-line" style="animation-delay: 0.2s;"></div>
+                            <div class="vertical-line" style="animation-delay: 0.3s;"></div>
+                            <div class="vertical-line" style="animation-delay: 0.4s;"></div>
+                            <div class="vertical-line" style="animation-delay: 0.5s;"></div>
+                            <div class="vertical-line" style="animation-delay: 0.6s;"></div>
+                            <div class="vertical-line" style="animation-delay: 0.7s;"></div>
+                            <div class="vertical-line" style="animation-delay: 0.8s;"></div>
+                            <div class="vertical-line" style="animation-delay: 0.9s;"></div>
+                        </div>
+                        <div class="blue-rectangles">
+                            <div class="blue-rect blue-rect-1"></div>
+                            <div class="blue-rect blue-rect-2"></div>
+                            <div class="blue-rect blue-rect-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section class="stats-section" id="stats">
+            <div class="stats-grid" id="statsGrid">
+                <!-- Stats will be injected here -->
             </div>
         </section>
 
@@ -623,9 +923,9 @@
         <section class="about" id="about">
             <div class="container">
                 <div class="about-content" id="aboutContent">
-                    <h2 class="section-title" id="aboutTitle">About Us</h2>
-                    <p id="aboutDescription">Loading...</p>
-                    <p class="about-highlight" id="aboutHighlight">Loading...</p>
+                    <h2 class="section-title" id="aboutTitle">About VMR Technologies</h2>
+                    <p id="aboutDescription">We specialize in delivering comprehensive technology solutions that solve real-world business challenges. Our team of experts combines deep technical knowledge with industry insights to deliver custom technology solutions that drive measurable results.</p>
+                    <p class="about-highlight" id="aboutHighlight">Trusted by leading companies to build production-ready technology systems</p>
                 </div>
             </div>
         </section>
@@ -675,9 +975,9 @@
         <section class="cta-section" id="cta">
             <div class="container">
                 <div class="cta-content" id="ctaContent">
-                    <h2 id="ctaTitle">Ready to Get Started?</h2>
-                    <p id="ctaDescription">Contact us today to discuss your project.</p>
-                    <a href="#contact" class="btn btn-primary" id="ctaButton">Schedule Consultation</a>
+                    <h2 id="ctaTitle">Ready to Transform Your Business?</h2>
+                    <p id="ctaDescription">Get in touch with our team to discuss how we can help transform your business with innovative technology solutions.</p>
+                    <a href="#contact" class="btn btn-primary" id="ctaButton">Schedule a Consultation</a>
                 </div>
             </div>
         </section>
@@ -702,8 +1002,8 @@
                     <div class="social-links" id="socialLinks">
                         <!-- Social links will be injected here -->
                     </div>
-                    <p class="footer-copyright" id="footerCopyright">© 2024 AI Model Forge. All rights reserved.</p>
-                    <p class="footer-tagline" id="footerTagline" style="opacity: 0.8; margin-top: 0.5rem;">Building the Future of AI</p>
+                    <p class="footer-copyright" id="footerCopyright">© 2024 VMR Technologies. All rights reserved.</p>
+                    <p class="footer-tagline" id="footerTagline">Building the Future of Technology, One Solution at a Time</p>
                 </div>
             </div>
         </footer>
@@ -729,7 +1029,7 @@
         // Fallback configuration if JSON fails to load
         function useFallbackConfig() {
             siteConfig = {
-                site: { title: 'AI Model Forge', description: 'AI Training Services' },
+                site: { title: 'VMR Technologies', description: 'Technology Consulting Services' },
                 theme: {
                     primaryColor: '#6366f1',
                     secondaryColor: '#8b5cf6',
@@ -741,14 +1041,14 @@
                     borderColor: '#e5e7eb'
                 },
                 hero: {
-                    headline: 'Transform Your Business with Custom AI Models',
-                    subheadline: 'Expert training and development services.',
+                    headline: 'Transform Your Business with Technology Solutions',
+                    subheadline: 'Expert consulting and development services.',
                     ctaPrimary: 'Get Started',
                     ctaSecondary: 'Learn More'
                 },
                 about: {
-                    title: 'About Us',
-                    description: 'We specialize in AI model training and development.',
+                    title: 'About VMR Technologies',
+                    description: 'We specialize in delivering comprehensive technology solutions.',
                     highlight: 'Trusted by leading companies'
                 }
             };
@@ -784,14 +1084,10 @@
             }
         }
 
-        // Apply hero background image
+        // Apply hero background image (disabled for minimalist design)
         function applyHeroBackground() {
-            const hero = document.getElementById('hero');
-            const bgImage = siteConfig.hero?.backgroundImage;
-            if (bgImage && hero) {
-                hero.style.backgroundImage = `linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%), url('${bgImage}')`;
-                hero.style.backgroundBlendMode = 'overlay';
-            }
+            // Hero section uses white background with abstract graphic
+            // No background image needed for minimalist design
         }
 
         // Apply all configuration
@@ -810,7 +1106,8 @@
             // Logo
             const logo = document.getElementById('logo');
             if (logo && siteConfig.site?.title) {
-                logo.textContent = siteConfig.site.title.split(' - ')[0] || siteConfig.site.title;
+                const companyName = siteConfig.site.title.split(' - ')[0] || 'VMR Technologies';
+                logo.innerHTML = `✱ / ${companyName}`;
             }
 
             // Hero section
@@ -854,6 +1151,9 @@
 
             // Features section
             renderFeatures();
+
+            // Statistics section
+            updateStats();
 
             // Pricing section
             renderPricing();
@@ -926,6 +1226,33 @@
                     <p>${feature.description || ''}</p>
                 </div>
             `).join('');
+        }
+
+        // Render statistics
+        function renderStats() {
+            const grid = document.getElementById('statsGrid');
+            const stats = siteConfig.stats || [
+                { number: '28X', label: 'Faster Technology' },
+                { number: '9.2M', label: 'Total Active User' },
+                { number: '2.6%', label: 'Daily Basis Growth' },
+                { number: '2.5B', label: 'Funding Overall' }
+            ];
+
+            if (!grid) return;
+
+            grid.innerHTML = stats.map(stat => `
+                <div class="stat-item">
+                    <div class="stat-number">${stat.number || '0'}</div>
+                    <div class="stat-label">${stat.label || ''}</div>
+                </div>
+            `).join('');
+        }
+
+        // Update stats after config loads
+        function updateStats() {
+            if (siteConfig.stats) {
+                renderStats();
+            }
         }
 
         // Render pricing
@@ -1052,7 +1379,17 @@
 
             if (toggle && navLinks) {
                 toggle.addEventListener('click', () => {
-                    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                    const isVisible = navLinks.style.display === 'flex';
+                    navLinks.style.display = isVisible ? 'none' : 'flex';
+                    navLinks.style.flexDirection = 'column';
+                    navLinks.style.position = 'absolute';
+                    navLinks.style.top = '100%';
+                    navLinks.style.left = '0';
+                    navLinks.style.right = '0';
+                    navLinks.style.background = 'white';
+                    navLinks.style.padding = '1rem';
+                    navLinks.style.borderTop = '1px solid var(--border-light)';
+                    navLinks.style.gap = '1rem';
                 });
             }
         }
@@ -1075,6 +1412,9 @@
 
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', () => {
+            // Render stats immediately with default values
+            renderStats();
+            // Then load config to update if available
             loadConfig();
             initNavbar();
             initMobileMenu();
