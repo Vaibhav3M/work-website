@@ -868,8 +868,6 @@
                 <li><a href="#about">About</a></li>
             </ul>
             <div class="nav-right">
-                <a href="#" class="nav-icon" aria-label="Search">🔍</a>
-                <a href="#" class="nav-icon" aria-label="Language">🌐</a>
                 <a href="#contact" class="nav-cta">Get Started</a>
             </div>
             <button class="mobile-menu-toggle" id="mobileToggle">☰</button>
@@ -1002,7 +1000,7 @@
                     <div class="social-links" id="socialLinks">
                         <!-- Social links will be injected here -->
                     </div>
-                    <p class="footer-copyright" id="footerCopyright">© 2024 VMR Technologies. All rights reserved.</p>
+                    <p class="footer-copyright" id="footerCopyright">© <span id="currentYear"></span> VMR Technologies. All rights reserved.</p>
                     <p class="footer-tagline" id="footerTagline">Building the Future of Technology, One Solution at a Time</p>
                 </div>
             </div>
@@ -1185,9 +1183,26 @@
             // Footer
             const footerCopyright = document.getElementById('footerCopyright');
             const footerTagline = document.getElementById('footerTagline');
+            const currentYearSpan = document.getElementById('currentYear');
+
+            // Set current year dynamically
+            const currentYear = new Date().getFullYear();
+            if (currentYearSpan) {
+                currentYearSpan.textContent = currentYear;
+            }
 
             if (footerCopyright && siteConfig.footer?.copyright) {
-                footerCopyright.textContent = siteConfig.footer.copyright;
+                // Replace any year in copyright with current year
+                const copyrightText = siteConfig.footer.copyright.replace(/\d{4}/, currentYear);
+                footerCopyright.innerHTML = copyrightText;
+                // Update the year span if it exists
+                const updatedYearSpan = footerCopyright.querySelector('#currentYear');
+                if (updatedYearSpan) {
+                    updatedYearSpan.textContent = currentYear;
+                }
+            } else if (footerCopyright) {
+                // Fallback if no config
+                footerCopyright.innerHTML = `© <span id="currentYear">${currentYear}</span> VMR Technologies. All rights reserved.`;
             }
             if (footerTagline && siteConfig.footer?.tagline) {
                 footerTagline.textContent = siteConfig.footer.tagline;
@@ -1410,8 +1425,18 @@
             });
         }
 
+        // Set current year immediately
+        function setCurrentYear() {
+            const currentYearSpan = document.getElementById('currentYear');
+            if (currentYearSpan) {
+                currentYearSpan.textContent = new Date().getFullYear();
+            }
+        }
+
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', () => {
+            // Set current year immediately
+            setCurrentYear();
             // Render stats immediately with default values
             renderStats();
             // Then load config to update if available
