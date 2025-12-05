@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - VMR Technologies</title>
+    <link rel="icon" type="image/png" href="logo-1.png">
+    <style>
+        :root {
+            --primary: #0066ff;
+            --text: #000000;
+            --text-light: #333333;
+            --bg: #ffffff;
+            --border-light: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.6;
+            padding-top: 100px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .last-updated {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+        <h1>Terms of Service</h1>
+        <p class="last-updated">Last Updated: <span id="lastUpdated"></span></p>
+
+        <h2>1. Acceptance of Terms</h2>
+        <p>By accessing and using the VMR Technologies website and services, you accept and agree to be bound by the terms and provision of this agreement.</p>
+
+        <h2>2. Use License</h2>
+        <p>Permission is granted to temporarily access the materials on VMR Technologies' website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:</p>
+        <ul>
+            <li>Modify or copy the materials</li>
+            <li>Use the materials for any commercial purpose or for any public display</li>
+            <li>Attempt to reverse engineer any software contained on the website</li>
+            <li>Remove any copyright or other proprietary notations from the materials</li>
+        </ul>
+
+        <h2>3. Services</h2>
+        <p>VMR Technologies provides technology consulting and development services. All services are subject to separate service agreements that will be provided prior to engagement.</p>
+
+        <h2>4. User Accounts</h2>
+        <p>If you create an account with us, you are responsible for maintaining the security of your account and password. You agree to accept responsibility for all activities that occur under your account.</p>
+
+        <h2>5. Intellectual Property</h2>
+        <p>All content, features, and functionality of the website, including but not limited to text, graphics, logos, and software, are the exclusive property of VMR Technologies and are protected by copyright, trademark, and other intellectual property laws.</p>
+
+        <h2>6. Limitation of Liability</h2>
+        <p>In no event shall VMR Technologies or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on VMR Technologies' website.</p>
+
+        <h2>7. Accuracy of Materials</h2>
+        <p>The materials appearing on VMR Technologies' website could include technical, typographical, or photographic errors. VMR Technologies does not warrant that any of the materials on its website are accurate, complete, or current.</p>
+
+        <h2>8. Links to Other Websites</h2>
+        <p>Our website may contain links to third-party websites. We are not responsible for the content or privacy practices of these external sites.</p>
+
+        <h2>9. Modifications</h2>
+        <p>VMR Technologies may revise these terms of service at any time without notice. By using this website, you are agreeing to be bound by the then current version of these terms of service.</p>
+
+        <h2>10. Governing Law</h2>
+        <p>These terms and conditions are governed by and construed in accordance with the laws of Canada and you irrevocably submit to the exclusive jurisdiction of the courts in that location.</p>
+
+        <h2>11. Contact Information</h2>
+        <p>If you have any questions about these Terms of Service, please contact us at:</p>
+        <p><strong>Email:</strong> contact@vmrtechnologies.ca</p>
+    </div>
+
+    <script>
+        document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString('en-US', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+        });
+    </script>
+</body>
+</html>
+

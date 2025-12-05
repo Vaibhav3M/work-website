@@ -841,6 +841,50 @@
             font-weight: 400;
         }
 
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .trust-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            text-align: center;
+        }
+
+        .trust-item-label {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+
+        .about-additional {
+            margin-top: 1.5rem;
+            font-size: 1rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -997,6 +1041,7 @@
                 <div class="about-content" id="aboutContent">
                     <h2 class="section-title" id="aboutTitle">About VMR Technologies</h2>
                     <p id="aboutDescription">We specialize in delivering comprehensive technology solutions that solve real-world business challenges. Our team of experts combines deep technical knowledge with industry insights to deliver custom technology solutions that drive measurable results.</p>
+                    <p class="about-additional" id="aboutAdditional"></p>
                     <p class="about-highlight" id="aboutHighlight">Trusted by leading companies to build production-ready technology systems</p>
                 </div>
             </div>
@@ -1099,11 +1144,9 @@
         <footer>
             <div class="container">
                 <div class="footer-content">
-                    <div class="social-links" id="socialLinks">
-                        <!-- Social links will be injected here -->
-                    </div>
                     <p class="footer-copyright" id="footerCopyright">© <span id="currentYear"></span> VMR Technologies. All rights reserved.</p>
                     <p class="footer-tagline" id="footerTagline">Building the Future of Technology, One Solution at a Time</p>
+                    <div class="footer-links" id="footerLinks"></div>
                 </div>
             </div>
         </footer>
@@ -1235,12 +1278,16 @@
             const aboutTitle = document.getElementById('aboutTitle');
             const aboutDescription = document.getElementById('aboutDescription');
             const aboutHighlight = document.getElementById('aboutHighlight');
+            const aboutAdditional = document.getElementById('aboutAdditional');
 
             if (aboutTitle && siteConfig.about?.title) {
                 aboutTitle.textContent = siteConfig.about.title;
             }
             if (aboutDescription && siteConfig.about?.description) {
                 aboutDescription.textContent = siteConfig.about.description;
+            }
+            if (aboutAdditional && siteConfig.about?.additionalInfo) {
+                aboutAdditional.textContent = siteConfig.about.additionalInfo;
             }
             if (aboutHighlight && siteConfig.about?.highlight) {
                 aboutHighlight.textContent = siteConfig.about.highlight;
@@ -1307,7 +1354,16 @@
                 footerTagline.textContent = siteConfig.footer.tagline;
             }
 
-            renderSocialLinks();
+            // Footer links
+            const footerLinks = document.getElementById('footerLinks');
+            if (footerLinks && siteConfig.footer?.links) {
+                const links = siteConfig.footer.links || [];
+                if (links.length > 0) {
+                    footerLinks.innerHTML = links.map(link => 
+                        `<a href="${link.url}">${link.title}</a>`
+                    ).join('');
+                }
+            }
         }
 
         // Render services
@@ -1346,8 +1402,10 @@
         function renderStats() {
             const grid = document.getElementById('statsGrid');
             const stats = siteConfig.stats || [
-                { number: '28X', label: 'Faster Technology' },
-                { number: '2.6%', label: 'Daily Basis Growth' }
+                { number: '24/7', label: 'Support Available' },
+                { number: '100%', label: 'Client-Focused' },
+                { number: '7+', label: 'Technology Expertise' },
+                { number: 'Fast', label: 'Response Time' }
             ];
 
             if (!grid) return;
@@ -1433,6 +1491,9 @@
             }
             if (contactDescription && contact.description) {
                 contactDescription.textContent = contact.description;
+                if (contact.responseTime) {
+                    contactDescription.textContent += ' ' + contact.responseTime;
+                }
             }
 
             if (!contactInfo) return;

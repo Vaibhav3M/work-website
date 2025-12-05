@@ -23,8 +23,9 @@
   },
   "about": {
     "title": "About VMR Technologies",
-    "description": "We specialize in delivering comprehensive technology solutions that solve real-world business challenges. Our team of experts combines deep technical knowledge with industry insights to deliver custom technology solutions that drive measurable results.",
-    "highlight": "Trusted by leading companies to build production-ready technology systems"
+    "description": "VMR Technologies is a leading technology consulting firm specializing in delivering comprehensive solutions that solve real-world business challenges. We combine deep technical expertise with industry insights to deliver custom technology solutions that drive measurable results and sustainable growth.",
+    "highlight": "Trusted by leading companies across North America to build production-ready technology systems",
+    "additionalInfo": "Our proven methodology ensures seamless integration, optimal performance, and long-term success for businesses of all sizes."
   },
   "features": [
     {
@@ -175,16 +176,40 @@
   },
   "contact": {
     "title": "Get in Touch",
-    "description": "Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
-    "email": "contact@vmrtechnologies.ca"
-  },
-  "social": {
-    "twitter": "https://twitter.com/vmrtechnologies",
-    "linkedin": "https://linkedin.com/company/vmrtechnologies",
-    "github": "https://github.com/vmrtechnologies"
+    "description": "Have questions? We'd love to hear from you. Our team typically responds within 24 hours.",
+    "email": "contact@vmrtechnologies.ca",
+    "responseTime": "We typically respond within 24 hours during business days."
   },
   "footer": {
     "copyright": "© 2024 VMR Technologies. All rights reserved.",
-    "tagline": "Building the Future of Technology, One Solution at a Time"
-  }
+    "tagline": "Building the Future of Technology, One Solution at a Time",
+    "links": [
+      {
+        "title": "Privacy Policy",
+        "url": "privacy.html"
+      },
+      {
+        "title": "Terms of Service",
+        "url": "terms.html"
+      }
+    ]
+  },
+  "stats": [
+    {
+      "number": "24/7",
+      "label": "Support Available"
+    },
+    {
+      "number": "100%",
+      "label": "Client-Focused"
+    },
+    {
+      "number": "7+",
+      "label": "Technology Expertise"
+    },
+    {
+      "number": "Fast",
+      "label": "Response Time"
+    }
+  ]
 }
