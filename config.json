@@ -60,6 +60,11 @@
   ],
   "services": [
     {
+      "title": "AI",
+      "description": "Artificial intelligence solutions including machine learning, natural language processing, and AI strategy consulting to transform your business operations.",
+      "icon": "🤖"
+    },
+    {
       "title": "Software Development",
       "description": "End-to-end software development services for web, mobile, and enterprise applications using modern technologies.",
       "icon": "💻"
@@ -96,7 +101,7 @@
     "plans": [
       {
         "name": "Starter",
-        "price": "5,000",
+        "price": "CAD $5,000",
         "period": "project",
         "description": "Perfect for small-scale technology initiatives",
         "features": [
@@ -110,7 +115,7 @@
       },
       {
         "name": "Professional",
-        "price": "15,000",
+        "price": "CAD $15,000",
         "period": "project",
         "description": "Ideal for growing businesses",
         "features": [
@@ -171,9 +176,7 @@
   "contact": {
     "title": "Get in Touch",
     "description": "Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
-    "email": "contact@vmrtechnologies.com",
-    "phone": "+1 (555) 123-4567",
-    "address": "123 Innovation Drive, San Francisco, CA 94105"
+    "email": "contact@vmrtechnologies.ca"
   },
   "social": {
     "twitter": "https://twitter.com/vmrtechnologies",
