@@ -826,79 +826,6 @@
             border-bottom-color: var(--primary);
         }
 
-        /* Contact Form */
-        .contact-form {
-            margin-top: 3rem;
-            text-align: left;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: var(--text);
-            font-size: 0.95rem;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid var(--border-light);
-            background: var(--bg);
-            color: var(--text);
-            font-size: 1rem;
-            font-family: inherit;
-            transition: border-color 0.2s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .form-group select {
-            cursor: pointer;
-        }
-
-        .form-submit {
-            width: 100%;
-            margin-top: 1rem;
-        }
-
-        .form-message {
-            margin-top: 1rem;
-            padding: 1rem;
-            text-align: center;
-            display: none;
-        }
-
-        .form-message.success {
-            display: block;
-            background: rgba(0, 102, 255, 0.1);
-            color: var(--primary);
-            border: 1px solid var(--primary);
-        }
-
-        .form-message.error {
-            display: block;
-            background: rgba(255, 0, 0, 0.1);
-            color: #cc0000;
-            border: 1px solid #cc0000;
-        }
-
         /* Footer */
         footer {
             background: var(--bg);
@@ -1210,44 +1137,6 @@
                     <div class="contact-info" id="contactInfo">
                         <!-- Contact info will be injected here -->
                     </div>
-                    <form class="contact-form" id="contactForm" name="contact" netlify netlify-honeypot="bot-field" data-netlify="true">
-                        <input type="hidden" name="form-name" value="contact">
-                        <p style="display: none;">
-                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-                        </p>
-                        <div class="form-group">
-                            <label for="name">Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="company">Company</label>
-                            <input type="text" id="company" name="company">
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Service Interest</label>
-                            <select id="service" name="service">
-                                <option value="">Select a service...</option>
-                                <option value="ai">AI</option>
-                                <option value="software-development">Software Development</option>
-                                <option value="cloud-solutions">Cloud Solutions</option>
-                                <option value="custom-development">Custom Development</option>
-                                <option value="technology-consulting">Technology Consulting</option>
-                                <option value="system-integration">System Integration</option>
-                                <option value="support-maintenance">Support & Maintenance</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <div class="form-message" id="formMessage"></div>
-                        <button type="submit" class="btn btn-primary form-submit">Send Message</button>
-                    </form>
                 </div>
             </div>
         </section>
@@ -1747,68 +1636,6 @@
             }
         }
 
-        // Contact form handling
-        function initContactForm() {
-            const form = document.getElementById('contactForm');
-            const formMessage = document.getElementById('formMessage');
-
-            if (!form) return;
-
-            form.addEventListener('submit', async (e) => {
-                e.preventDefault();
-
-                // Get form data
-                const formData = new FormData(form);
-                const data = {
-                    name: formData.get('name'),
-                    email: formData.get('email'),
-                    company: formData.get('company'),
-                    service: formData.get('service'),
-                    message: formData.get('message')
-                };
-
-                // Show loading state
-                const submitButton = form.querySelector('button[type="submit"]');
-                const originalButtonText = submitButton.textContent;
-                submitButton.textContent = 'Sending...';
-                submitButton.disabled = true;
-                formMessage.style.display = 'none';
-
-                try {
-                    // Netlify Forms submission
-                    const response = await fetch('/', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                        body: new URLSearchParams(new FormData(form)).toString()
-                    });
-
-                    if (!response.ok) {
-                        throw new Error('Form submission failed');
-                    }
-
-                    // Show success message
-                    formMessage.className = 'form-message success';
-                    formMessage.textContent = 'Thank you! Your message has been sent. We\'ll get back to you soon.';
-                    formMessage.style.display = 'block';
-                    form.reset();
-
-                    // Scroll to message
-                    formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-                } catch (error) {
-                    // Show error message
-                    formMessage.className = 'form-message error';
-                    formMessage.textContent = 'Sorry, there was an error sending your message. Please try again or contact us directly.';
-                    formMessage.style.display = 'block';
-                    console.error('Form submission error:', error);
-                } finally {
-                    // Reset button
-                    submitButton.textContent = originalButtonText;
-                    submitButton.disabled = false;
-                }
-            });
-        }
-
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', () => {
             // Set current year immediately
@@ -1820,7 +1647,6 @@
             initNavbar();
             initMobileMenu();
             initSmoothScroll();
-            initContactForm();
         });
     </script>
 </body>

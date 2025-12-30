@@ -226,9 +226,9 @@
   },
   "contact": {
     "title": "Get in Touch",
-    "description": "Have questions? We'd love to hear from you. Our team typically responds within 24 hours.",
+    "description": "Have questions? We'd love to hear from you.",
     "email": "contact@vmrtechnologies.ca",
-    "responseTime": "We typically respond within 24 hours during business days."
+    "responseTime": "We typically respond within 1-2 business days."
   },
   "footer": {
     "copyright": "© 2024 VMR Technologies. All rights reserved.",
