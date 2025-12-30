@@ -168,6 +168,56 @@
       "avatar": "https://i.pravatar.cc/150?img=45"
     }
   ],
+  "careers": {
+    "title": "Join Our Team",
+    "subtitle": "We're looking for talented individuals to help us build the future of technology",
+    "jobs": [
+      {
+        "title": "IT Analyst",
+        "department": "Technology",
+        "type": "Full-time",
+        "location": "Remote",
+        "description": "We are seeking an experienced IT Analyst to join our technology team. You will be responsible for analyzing business requirements, designing technical solutions, and supporting our clients' technology infrastructure.",
+        "requirements": [
+          "Degree in Computer Science, IT, or related field",
+          "Experience in IT analysis or systems administration",
+          "Strong analytical and problem-solving skills",
+          "Excellent communication and documentation skills"
+        ],
+        "applyEmail": "careers@vmrtechnologies.ca"
+      },
+      {
+        "title": "Junior Software Engineer",
+        "department": "Engineering",
+        "type": "Full-time",
+        "location": "Remote",
+        "description": "We're looking for a motivated Junior Software Engineer to develop and maintain software solutions. You'll work with modern technologies and collaborate with our experienced engineering team.",
+        "requirements": [
+          "Bachelor's degree in Computer Science or related field",
+          "1-2 years of software development experience",
+          "Proficiency in at least one programming language (Python, JavaScript, Java, or C#)",
+          "Understanding of software development best practices",
+          "Strong problem-solving and debugging skills"
+        ],
+        "applyEmail": "careers@vmrtechnologies.ca"
+      },
+      {
+        "title": "AI Annotator for Code",
+        "department": "AI Learning",
+        "type": "Full-time",
+        "location": "Remote",
+        "description": "Join our AI team as a Code Annotator. You will be responsible for annotating, labeling, and preparing code datasets for machine learning models. This role is crucial for training and improving our AI systems.",
+        "requirements": [
+          "Bachelor's degree in Computer Science or related field",
+          "Strong understanding of programming concepts and code structure",
+          "Experience with multiple programming languages",
+          "Attention to detail and accuracy",
+          "Understanding of machine learning concepts (preferred)"
+        ],
+        "applyEmail": "careers@vmrtechnologies.ca"
+      }
+    ]
+  },
   "cta": {
     "title": "Ready to Transform Your Business?",
     "description": "Get in touch with our team to discuss how we can help transform your business with innovative technology solutions.",

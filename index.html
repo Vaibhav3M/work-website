@@ -618,6 +618,106 @@
             width: 100%;
         }
 
+        /* Careers Section */
+        .careers {
+            background: var(--bg);
+        }
+
+        .careers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .job-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 0;
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+
+        .job-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(0, 102, 255, 0.1);
+        }
+
+        .job-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .job-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .job-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .job-meta-item {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .job-meta-item strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .job-description {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .job-requirements {
+            margin-bottom: 1.5rem;
+        }
+
+        .job-requirements h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.75rem;
+        }
+
+        .job-requirements ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .job-requirements li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            color: var(--text-light);
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .job-requirements li:before {
+            content: '•';
+            color: var(--primary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .job-apply {
+            margin-top: 1.5rem;
+        }
+
+        .job-apply .btn {
+            width: 100%;
+        }
+
         /* Testimonials */
         .testimonials-grid {
             display: grid;
@@ -982,6 +1082,7 @@
             <ul class="nav-center" id="navLinks">
                 <li><a href="#services" class="nav-dropdown">Products</a></li>
                 <li><a href="#features" class="nav-dropdown">Solutions</a></li>
+                <li><a href="#careers">Careers</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#about">About</a></li>
             </ul>
@@ -1074,6 +1175,17 @@
                 <p class="section-subtitle" id="pricingSubtitle">Choose the plan that fits your needs</p>
                 <div class="pricing-grid" id="pricingGrid">
                     <!-- Pricing cards will be injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Careers Section -->
+        <section class="careers" id="careers">
+            <div class="container">
+                <h2 class="section-title" id="careersTitle">Join Our Team</h2>
+                <p class="section-subtitle" id="careersSubtitle">We're looking for talented individuals to help us build the future of technology</p>
+                <div class="careers-grid" id="careersGrid">
+                    <!-- Jobs will be injected here -->
                 </div>
             </div>
         </section>
@@ -1305,6 +1417,9 @@
             // Pricing section
             renderPricing();
 
+            // Careers section
+            renderCareers();
+
             // CTA section
             const ctaTitle = document.getElementById('ctaTitle');
             const ctaDescription = document.getElementById('ctaDescription');
@@ -1454,6 +1569,47 @@
                         ${(plan.features || []).map(feature => `<li>${feature}</li>`).join('')}
                     </ul>
                     <a href="#contact" class="btn btn-primary pricing-cta">${plan.cta || 'Get Started'}</a>
+                </div>
+            `).join('');
+        }
+
+        // Render careers
+        function renderCareers() {
+            const grid = document.getElementById('careersGrid');
+            const careersTitle = document.getElementById('careersTitle');
+            const careersSubtitle = document.getElementById('careersSubtitle');
+            const careers = siteConfig.careers || {};
+
+            if (careersTitle && careers.title) {
+                careersTitle.textContent = careers.title;
+            }
+            if (careersSubtitle && careers.subtitle) {
+                careersSubtitle.textContent = careers.subtitle;
+            }
+
+            const jobs = careers.jobs || [];
+            if (!grid || jobs.length === 0) return;
+
+            grid.innerHTML = jobs.map(job => `
+                <div class="job-card">
+                    <div class="job-header">
+                        <h3 class="job-title">${job.title || 'Position'}</h3>
+                        <div class="job-meta">
+                            <span class="job-meta-item"><strong>Department:</strong> ${job.department || 'N/A'}</span>
+                            <span class="job-meta-item"><strong>Type:</strong> ${job.type || 'Full-time'}</span>
+                            <span class="job-meta-item"><strong>Location:</strong> ${job.location || 'Remote'}</span>
+                        </div>
+                    </div>
+                    <p class="job-description">${job.description || ''}</p>
+                    <div class="job-requirements">
+                        <h4>Requirements:</h4>
+                        <ul>
+                            ${(job.requirements || []).map(req => `<li>${req}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div class="job-apply">
+                        <a href="mailto:${job.applyEmail || 'careers@vmrtechnologies.ca'}?subject=Application for ${job.title || 'Position'}" class="btn btn-primary">Apply Now</a>
+                    </div>
                 </div>
             `).join('');
         }
