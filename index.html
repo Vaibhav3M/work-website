@@ -83,11 +83,6 @@
             gap: 0.5rem;
         }
 
-        .logo::before {
-            content: '✱';
-            font-size: 1.5rem;
-            color: var(--text);
-        }
 
         .nav-center {
             display: flex;
@@ -1005,7 +1000,7 @@
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <div class="logo" id="logo">✱ / VMR Technologies</div>
+            <div class="logo" id="logo">VMR Technologies</div>
             <ul class="nav-center" id="navLinks">
                 <li><a href="#services" class="nav-dropdown">Products</a></li>
                 <li><a href="#features" class="nav-dropdown">Solutions</a></li>
@@ -1251,7 +1246,7 @@
             const logo = document.getElementById('logo');
             if (logo && siteConfig.site?.title) {
                 const companyName = siteConfig.site.title.split(' - ')[0] || 'VMR Technologies';
-                logo.innerHTML = `✱ / ${companyName}`;
+                logo.innerHTML = `${companyName}`;
             }
 
             // Hero section
