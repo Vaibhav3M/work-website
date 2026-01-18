@@ -129,7 +129,7 @@
         }
 
         /* Navigation */
-        nav {
+        nav#navbar {
             position: fixed;
             top: 0;
             width: 100%;
@@ -140,7 +140,7 @@
             transition: all 0.3s ease;
         }
 
-        nav.scrolled {
+        nav#navbar.scrolled {
             border-bottom: 1px solid var(--border-light);
         }
 
@@ -1077,7 +1077,6 @@
 </head>
 <body>
     <!-- Navigation -->
-    <header>
     <nav id="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="logo" id="logo">VMR Technologies</div>
@@ -1094,7 +1093,6 @@
             <button class="mobile-menu-toggle" id="mobileToggle">☰</button>
         </div>
     </nav>
-    </header>
 
     <main id="main-content" role="main">
         <!-- Hero Section -->
@@ -1225,7 +1223,7 @@
             <div class="footer-content">
                 <p class="footer-copyright" id="footerCopyright">© <span id="currentYear"></span> VMR Technologies. All rights reserved.</p>
                 <p class="footer-tagline" id="footerTagline">Building the Future of Technology, One Solution at a Time</p>
-                <nav class="footer-links" id="footerLinks" aria-label="Footer navigation"></nav>
+                <div class="footer-links" id="footerLinks" role="navigation" aria-label="Footer navigation"></div>
             </div>
         </div>
     </footer>
