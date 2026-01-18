@@ -1,0 +1,11 @@
+# robots.txt for VMR Technologies
+# https://vmrtechnologies.ca
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://vmrtechnologies.ca/sitemap.xml
+
+# Disallow common non-content paths
+Disallow: /*.json$

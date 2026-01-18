@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - VMR Technologies</title>
+    <meta name="description" content="VMR Technologies Terms of Service. Read our terms and conditions for using our website and technology consulting services.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://vmrtechnologies.ca/terms.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vmrtechnologies.ca/terms.html">
+    <meta property="og:title" content="Terms of Service - VMR Technologies">
+    <meta property="og:description" content="VMR Technologies Terms of Service. Read our terms and conditions for using our services.">
+    <meta property="og:site_name" content="VMR Technologies">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Terms of Service - VMR Technologies">
+    <meta name="twitter:description" content="VMR Technologies Terms of Service. Read our terms and conditions for using our services.">
+    
     <link rel="icon" type="image/png" href="logo-1.png">
+    <link rel="apple-touch-icon" href="logo-1.png">
     <style>
         :root {
             --primary: #0066ff;
@@ -84,8 +101,11 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="index.html" class="back-link">← Back to Home</a>
+    <main class="container" role="main">
+        <nav aria-label="Breadcrumb">
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </nav>
+        <article>
         <h1>Terms of Service</h1>
         <p class="last-updated">Last Updated: <span id="lastUpdated"></span></p>
 
@@ -127,8 +147,9 @@
 
         <h2>11. Contact Information</h2>
         <p>If you have any questions about these Terms of Service, please contact us at:</p>
-        <p><strong>Email:</strong> contact@vmrtechnologies.ca</p>
-    </div>
+        <p><strong>Email:</strong> <a href="mailto:contact@vmrtechnologies.ca">contact@vmrtechnologies.ca</a></p>
+        </article>
+    </main>
 
     <script>
         document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString('en-US', { 

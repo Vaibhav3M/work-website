@@ -1,14 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VMR Technologies - Technology Consulting & Solutions</title>
     <meta name="description" content="Expert technology consulting services. We help businesses transform their operations with innovative technology solutions tailored to their needs.">
+    <meta name="keywords" content="technology consulting, IT consulting, software development, cloud solutions, digital transformation, AI solutions, custom software, enterprise technology">
+    <meta name="author" content="VMR Technologies">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://vmrtechnologies.ca/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vmrtechnologies.ca/">
+    <meta property="og:title" content="VMR Technologies - Technology Consulting & Solutions">
+    <meta property="og:description" content="Expert technology consulting services. We help businesses transform their operations with innovative technology solutions tailored to their needs.">
+    <meta property="og:image" content="https://vmrtechnologies.ca/logo-1.png">
+    <meta property="og:site_name" content="VMR Technologies">
+    <meta property="og:locale" content="en_CA">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://vmrtechnologies.ca/">
+    <meta name="twitter:title" content="VMR Technologies - Technology Consulting & Solutions">
+    <meta name="twitter:description" content="Expert technology consulting services. We help businesses transform their operations with innovative technology solutions tailored to their needs.">
+    <meta name="twitter:image" content="https://vmrtechnologies.ca/logo-1.png">
+    
+    <!-- Additional SEO -->
+    <meta name="geo.region" content="CA">
+    <meta name="geo.placename" content="Canada">
     <link rel="icon" type="image/png" href="logo-1.png">
+    <link rel="apple-touch-icon" href="logo-1.png">
+    
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "VMR Technologies",
+        "description": "Expert technology consulting services. We help businesses transform their operations with innovative technology solutions.",
+        "url": "https://vmrtechnologies.ca",
+        "logo": "https://vmrtechnologies.ca/logo-1.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "contact@vmrtechnologies.ca",
+            "contactType": "customer service",
+            "areaServed": "CA",
+            "availableLanguage": "English"
+        },
+        "sameAs": [],
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "CA"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "VMR Technologies",
+        "url": "https://vmrtechnologies.ca",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://vmrtechnologies.ca/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "VMR Technologies",
+        "description": "Technology consulting and software development services",
+        "url": "https://vmrtechnologies.ca",
+        "priceRange": "$$",
+        "serviceType": ["Technology Consulting", "Software Development", "Cloud Solutions", "AI Solutions"],
+        "areaServed": {
+            "@type": "Country",
+            "name": "Canada"
+        }
+    }
+    </script>
     <style>
         :root {
             --primary: #0066ff;
@@ -998,7 +1077,8 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav id="navbar">
+    <header>
+    <nav id="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="logo" id="logo">VMR Technologies</div>
             <ul class="nav-center" id="navLinks">
@@ -1014,12 +1094,13 @@
             <button class="mobile-menu-toggle" id="mobileToggle">☰</button>
         </div>
     </nav>
+    </header>
 
-    <div id="main-content">
+    <main id="main-content" role="main">
         <!-- Hero Section -->
-        <section class="hero" id="hero">
+        <section class="hero" id="hero" aria-labelledby="heroTitle">
             <div class="hero-container">
-                <div class="hero-content" id="heroContent">
+                <article class="hero-content" id="heroContent">
                     <h1 id="heroTitle">Transform Your Business with Technology Solutions</h1>
                     <p id="heroSubtitle">Expert consulting and development services for cutting-edge technology solutions tailored to your unique business needs.</p>
                     <div class="hero-buttons">
@@ -1047,7 +1128,7 @@
                             <div class="blue-rect blue-rect-3"></div>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
         </section>
 
@@ -1136,17 +1217,18 @@
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="footer-content">
-                    <p class="footer-copyright" id="footerCopyright">© <span id="currentYear"></span> VMR Technologies. All rights reserved.</p>
-                    <p class="footer-tagline" id="footerTagline">Building the Future of Technology, One Solution at a Time</p>
-                    <div class="footer-links" id="footerLinks"></div>
-                </div>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-copyright" id="footerCopyright">© <span id="currentYear"></span> VMR Technologies. All rights reserved.</p>
+                <p class="footer-tagline" id="footerTagline">Building the Future of Technology, One Solution at a Time</p>
+                <nav class="footer-links" id="footerLinks" aria-label="Footer navigation"></nav>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
 
     <script>
         // Global config storage
